@@ -1,0 +1,50 @@
+<div class="textodiv cuerpo">
+  <p>
+   Tipo de postre
+  </p>
+
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Torta o Cupcakes</mat-radio-button>
+    <mat-radio-button value="2">Galletas</mat-radio-button>
+    <mat-radio-button value="3">Otro</mat-radio-button>
+  </mat-radio-group>
+
+</div>
+<div fxFlex fxFlexOffset="20px" >
+  <h3>Realiza tu pedido</h3>
+  <p>{{ pedidoForm.value | json }}</p>
+
+  <form novalidate [formGroup]="PedidoForm" (ngSubmit)="onSubmit()">
+    <p>
+      <mat-form-field >
+        <input matInput formControlName="email" placeholder="Email" type="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="tipoPostre" placeholder="Tipo Postre" type="text">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field >
+        <input matInput formControlName="porciones" placeholder="Numero porciones" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea  matInput formControlName="comentarios" placeholder="Comentarios" rows=12> </textarea>
+      </mat-form-field>
+    </p>
+    <table class="form-size">
+      
+      <td>
+        <mat-select placeholder="otro" formControlName="otro">
+          <mat-option *ngFor="let ctype of otro" [value]="ctype">
+            {{ ctype }}
+          </mat-option>
+        </mat-select>
+      </td>
+      </table>
+    
+    <button type="submit" mat-button>Submit</button>
+  </form>
+</div>
+
+
