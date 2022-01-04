@@ -1,49 +1,118 @@
-<div class="textodiv cuerpo">
-  <p>
-   Tipo de postre
-  </p>
 
-
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1">Torta o Cupcakes</mat-radio-button>
-    <mat-radio-button value="2">Galletas</mat-radio-button>
-    <mat-radio-button value="3">Otro</mat-radio-button>
-  </mat-radio-group>
-
-</div>
-<div fxFlex fxFlexOffset="20px" >
+<div fxFlex fxFlexOffset="20px" class="textodiv cuerpo" >
   <h3>Realiza tu pedido</h3>
-  <p>{{ pedidoForm.value | json }}</p>
+ <p>
+   <select name="miLista" [(ngModel)]="selectedQuantity">
+    <option *ngFor="let item of otroPostre" [value]="item" >{{item}}</option>
+
+   </select>
+ </p>
+ <select class="form-select" name="NAME" ngModel>
+   <option [value]="item" *ngFor="let item of otroPostre">{{item}}</option>
+  <option value="" disabled selected>Select text</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
 
   <form novalidate [formGroup]="PedidoForm" (ngSubmit)="onSubmit()">
+
     <p>
-      <mat-form-field >
-        <input matInput formControlName="email" placeholder="Email" type="email">
-      </mat-form-field>
+      <label>
+        Email
+      </label>
       <mat-form-field>
-        <input matInput formControlName="tipoPostre" placeholder="Tipo Postre" type="text">
+        <input height= 200 matInput formControlName="email" placeholder="Email" type="email">
       </mat-form-field>
     </p>
     <p>
+
+      <label>Tipo de postre</label>
+      
+      <label>
+        <input type="radio">
+        Torta o Cupcakes
+      </label>
+      <label>
+        <input type="radio">
+        Galletas
+      </label>
+      <label>
+        <input type="radio">
+        Otro
+      </label><br/>
+      <select class="form-select" name="NAME" ngModel>
+        <option [value]="item" *ngFor="let item of otroPostre">{{item}}</option>
+       <option value="" disabled selected>Select text</option>
+       <option value="1">One</option>
+       <option value="2">Two</option>
+       <option value="3">Three</option>
+     </select>
+     
+    </p>
+    <p>
+      <label>
+        Porciones
+      </label>
       <mat-form-field >
         <input matInput formControlName="porciones" placeholder="Numero porciones" type="number">
       </mat-form-field>
-      <mat-form-field>
-        <textarea  matInput formControlName="comentarios" placeholder="Comentarios" rows=12> </textarea>
-      </mat-form-field>
     </p>
-    <table class="form-size">
+    <p>
+      <label>
+        Masa
+      </label>
+      <select class="form-select" name="NAME" ngModel>
+        
+       <option value="" disabled selected>Color de masa</option>
+       <option value="1">Rojo</option>
+       <option value="2">Amarillo</option>
+       <option value="3">Azul</option>
+     </select>
+     <select class="form-select" name="NAME" ngModel>
+        
+      <option value="" disabled selected>Sabor de masa</option>
+      <option value="1">Chocolate</option>
+      <option value="2">Vainilla</option>
       
-      <td>
-        <mat-select placeholder="otro" formControlName="otro">
-          <mat-option *ngFor="let ctype of otro" [value]="ctype">
-            {{ ctype }}
-          </mat-option>
-        </mat-select>
-      </td>
-      </table>
+    </select>
+      
+    </p>
+    <p>
+      <label>
+        Cobertura
+      </label>
+      <select class="form-select" name="NAME" ngModel>
+        
+        <option value="" disabled selected>Color de cobertura</option>
+        <option value="1">Rojo</option>
+        <option value="2">Amarillo</option>
+        <option value="3">Azul</option>
+      </select>
+      <select class="form-select" name="NAME" ngModel>
+        
+        <option value="" disabled selected>Sabor de cobertura</option>
+        <option value="1">Chocolate</option>
+        <option value="2">Vainilla</option>
+        
+      </select>
+      
+    </p>
+    <p>
+      
+        <label>Comentarios adicionales</label><br>
+        <mat-form-field>
+          <textarea  matInput formControlName="comentarios" placeholder="Comentarios" rows=12> </textarea>
+        </mat-form-field><br>
+      
+        <label>Imagen de referencia</label><br>
+        <button>Adjuntar imagen</button>
     
-    <button type="submit" mat-button>Submit</button>
+      
+    </p>
+    
+    
+    <button type="submit" mat-button>Enviar</button>
   </form>
 </div>
 

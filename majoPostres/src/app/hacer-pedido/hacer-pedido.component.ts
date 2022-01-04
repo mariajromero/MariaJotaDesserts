@@ -13,6 +13,9 @@ export class HacerPedidoComponent implements OnInit {
   pedido: Pedido;
   otro = Otro;
 
+  otroPostre:string[]=["hola","que","tal", "popeta"];
+  selectedQuantity = "hola";
+
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
