@@ -1,119 +1,111 @@
-
-<div fxFlex fxFlexOffset="20px" class="textodiv cuerpo" >
-  <h3>Realiza tu pedido</h3>
- <p>
-   <select name="miLista" [(ngModel)]="selectedQuantity">
-    <option *ngFor="let item of otroPostre" [value]="item" >{{item}}</option>
-
-   </select>
- </p>
- <select class="form-select" name="NAME" ngModel>
-   <option [value]="item" *ngFor="let item of otroPostre">{{item}}</option>
-  <option value="" disabled selected>Select text</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-
-  <form novalidate [formGroup]="PedidoForm" (ngSubmit)="onSubmit()">
-
-    <p>
-      <label>
-        Email
-      </label>
-      <mat-form-field>
-        <input height= 200 matInput formControlName="email" placeholder="Email" type="email">
-      </mat-form-field>
-    </p>
-    <p>
-
-      <label>Tipo de postre</label>
-      
-      <label>
-        <input type="radio">
-        Torta o Cupcakes
-      </label>
-      <label>
-        <input type="radio">
-        Galletas
-      </label>
-      <label>
-        <input type="radio">
-        Otro
-      </label><br/>
-      <select class="form-select" name="NAME" ngModel>
-        <option [value]="item" *ngFor="let item of otroPostre">{{item}}</option>
-       <option value="" disabled selected>Select text</option>
-       <option value="1">One</option>
-       <option value="2">Two</option>
-       <option value="3">Three</option>
-     </select>
+<div  class="textodiv cuerpo" >
+  <div>
+    <h3>Realiza tu pedido</h3>
+    <mat-grid-list cols="6" rowHeight="100px" >
+      <mat-grid-tile  colspan="2" class="fondoLabels">
+        <label>
+          Email
+        </label>
+      </mat-grid-tile>
      
-    </p>
-    <p>
+        <mat-grid-tile colspan="4">
+          <div class="fondoDatos">
+            <input type="text" placeholder="Email">
+          </div>
+          
+        </mat-grid-tile>
+      
+     
+      <mat-grid-tile colspan="2" class="fondoLabels">
       <label>
-        Porciones
+        Tipo de Postre
       </label>
-      <mat-form-field >
-        <input matInput formControlName="porciones" placeholder="Numero porciones" type="number">
-      </mat-form-field>
-    </p>
-    <p>
-      <label>
-        Masa
-      </label>
-      <select class="form-select" name="NAME" ngModel>
         
-       <option value="" disabled selected>Color de masa</option>
-       <option value="1">Rojo</option>
-       <option value="2">Amarillo</option>
-       <option value="3">Azul</option>
-     </select>
-     <select class="form-select" name="NAME" ngModel>
+      </mat-grid-tile>
+      <div  fxLayout="row" fxLayoutAlign="space-around center">
+        <mat-grid-tile colspan="4">
         
-      <option value="" disabled selected>Sabor de masa</option>
-      <option value="1">Chocolate</option>
-      <option value="2">Vainilla</option>
-      
-    </select>
-      
-    </p>
-    <p>
-      <label>
-        Cobertura
-      </label>
-      <select class="form-select" name="NAME" ngModel>
+          <div>
+            <label>
+              <input type="radio">
+              Torta o Cupcakes
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="radio">
+              Galletas
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="radio">
+              Otro
+            </label>
+          </div>
+          <div>
+            <select class="form-select" name="NAME" ngModel>
+             
+             <option value="" disabled selected>Selecciona una opción</option>
+             <option value="1">Donas</option>
+             <option value="2">Pie</option>
+             <option value="3">Brownie</option>
+           </select>
+          </div>
+    
+        </mat-grid-tile>
+      </div>
+     
+      <mat-grid-tile colspan="2" class="fondoLabels">
+        <label>
+          Porciones
+        </label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="4">
+        <div class="fondoDatos">
+          <input   placeholder="Numero porciones" type="number">
+        </div>
         
-        <option value="" disabled selected>Color de cobertura</option>
-        <option value="1">Rojo</option>
-        <option value="2">Amarillo</option>
-        <option value="3">Azul</option>
-      </select>
-      <select class="form-select" name="NAME" ngModel>
-        
-        <option value="" disabled selected>Sabor de cobertura</option>
-        <option value="1">Chocolate</option>
-        <option value="2">Vainilla</option>
-        
-      </select>
-      
-    </p>
-    <p>
-      
-        <label>Comentarios adicionales</label><br>
-        <mat-form-field>
-          <textarea  matInput formControlName="comentarios" placeholder="Comentarios" rows=12> </textarea>
-        </mat-form-field><br>
-      
-        <label>Imagen de referencia</label><br>
+  
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3" class="fondoLabels">
+        <label>
+          Comentarios Adicionales
+        </label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3" class="fondoLabels" >
+        <label>
+          Imagen de referencia
+        </label>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="2" colspan="3">
+        <textarea    placeholder="Escribe aqui" rows=12> </textarea>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="2" colspan="3">
         <button>Adjuntar imagen</button>
-    
-      
-    </p>
-    
-    
-    <button type="submit" mat-button>Enviar</button>
-  </form>
+      </mat-grid-tile>
+     
+  
+    </mat-grid-list>
+   
+  
+  </div>
+  <div>
+    <button>Enviar</button>
+  </div>
+  
+
 </div>
 
+<div>
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
 

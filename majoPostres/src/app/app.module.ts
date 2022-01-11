@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import 'hammerjs';
 
@@ -31,6 +32,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     HacerPedidoComponent
   ],
   imports: [
+    MatGridListModule,
     FormsModule,
     MatSelectModule,
     MatSlideToggleModule,

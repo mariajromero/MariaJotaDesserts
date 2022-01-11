@@ -36,6 +36,12 @@ $star-command-blue: rgba(34, 116, 165, 1);
     width: 300px;
     height: 300px;
     padding: 40px;
+    
+    
+}
+.divImagenHeader{
+    position: absolute;
+    left:20px;
 }
 .letraHeader{
     color: $kobi;
@@ -44,10 +50,13 @@ $star-command-blue: rgba(34, 116, 165, 1);
     
     
 }
+.divHeader{
+    margin-top:50px;
+}
 .tituloHeader{
     padding-bottom: 0px;
-    padding-top: 40px;
-    margin-bottom: 0px;
+    margin: 0px;
+    
 }
 .pegado{
     margin: 0;
@@ -85,11 +94,28 @@ $star-command-blue: rgba(34, 116, 165, 1);
     color:$star-command-blue;
 }
 .imagenFondo{
-    background-image: url("src/assets/images/banner.jpeg");
-    opacity: 0.8;
-    margin-top: 200px;
+    
+   
+    margin-top: 180px;
+    margin-bottom: 20px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagenFondo::before{
+    content: "";
+    background-image: url("src/assets/images/banner.jpeg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
 }
 .letraHome{
     font-size: 60px;
@@ -97,6 +123,7 @@ $star-command-blue: rgba(34, 116, 165, 1);
     font-family: 'Barlow Condensed';
     padding: 20px;
     
+    position: relative;
 }
 .botonPedido{
     color:$prussian-blue;
@@ -120,6 +147,12 @@ $star-command-blue: rgba(34, 116, 165, 1);
     font-size: 50px;
 
 }
+.grid-layout-custom{
+    width: 50px;
+    height: 50px;
+    background: lightblue;
+    color: #dd4b39;
+  }
 .linkdiv{
     font-size: 40px;
 
@@ -128,4 +161,13 @@ $star-command-blue: rgba(34, 116, 165, 1);
     margin:60px;
     height: 400px;
     width: 400px;
+}
+
+
+.fondoLabels{
+    background-color: powderblue;
+}
+.fondoDatos{
+    position:absolute;
+    left:100px;
 }
