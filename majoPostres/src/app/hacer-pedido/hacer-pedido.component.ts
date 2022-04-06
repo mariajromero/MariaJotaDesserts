@@ -21,12 +21,24 @@ export class HacerPedidoComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
   
-
-  constructor() {
+  checkoutForm = this.formBuilder.group({
+    
+    email:'',
+    tipoPostre:'',
+    porciones:'',
+    comentarios:'',
+    imagen:''
+  });
+  constructor( private formBuilder: FormBuilder) {
     
   }
 
+  onSubmit(): void {
+   
   
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
+  }
  
   ngOnInit() {
     

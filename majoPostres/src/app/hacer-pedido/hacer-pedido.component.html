@@ -1,38 +1,41 @@
 <div  class="textodiv cuerpo" >
   <div>
     <h3>Realiza tu pedido</h3>
-    <mat-grid-list cols="6" rowHeight="100px" >
-      <mat-grid-tile  colspan="2" class="fondoLabels">
-        <label>
+    <mat-grid-list cols="2" rowHeight="100px" >
+      
+      <mat-grid-tile  colspan="1" class="fondoLabels">
+    
+        <label class="letraMasPeq">
           Email
         </label>
       </mat-grid-tile>
+      
      
-        <mat-grid-tile colspan="4">
+        <mat-grid-tile colspan="1">
           <div class="fondoDatos">
             <input type="text" placeholder="Email">
           </div>
           
         </mat-grid-tile>
       
-     
-      <mat-grid-tile colspan="2" class="fondoLabels">
-      <label>
+       
+      <mat-grid-tile colspan="1" class="fondoLabels">
+      <label class="letraMasPeq">
         Tipo de Postre
       </label>
         
       </mat-grid-tile>
-      <div  fxLayout="row" fxLayoutAlign="space-around center">
-        <mat-grid-tile colspan="4">
+      <div  fxLayout="row" >
+        <mat-grid-tile colspan="1" class="letraMasPeq">
         
           <div>
-            <label>
-              <input type="radio">
+            <label class="fondoDatos">
+              <input type="radio" >
               Torta o Cupcakes
             </label>
           </div>
           <div>
-            <label>
+            <label >
               <input type="radio">
               Galletas
             </label>
@@ -55,33 +58,34 @@
     
         </mat-grid-tile>
       </div>
-     
-      <mat-grid-tile colspan="2" class="fondoLabels">
-        <label>
+      
+      <mat-grid-tile colspan="1" class="fondoLabels">
+        <label class="letraMasPeq">
           Porciones
         </label>
       </mat-grid-tile>
-      <mat-grid-tile colspan="4">
+      <mat-grid-tile colspan="1">
         <div class="fondoDatos">
           <input   placeholder="Numero porciones" type="number">
         </div>
         
   
       </mat-grid-tile>
-      <mat-grid-tile colspan="3" class="fondoLabels">
-        <label>
+      
+      <mat-grid-tile colspan="1" class="fondoLabels">
+        <label class="letraMasPeq">
           Comentarios Adicionales
         </label>
       </mat-grid-tile>
-      <mat-grid-tile colspan="3" class="fondoLabels" >
-        <label>
+      <mat-grid-tile colspan="1" class="fondoLabels" >
+        <label class="letraMasPeq">
           Imagen de referencia
         </label>
       </mat-grid-tile>
-      <mat-grid-tile rowspan="2" colspan="3">
+      <mat-grid-tile rowspan="2" colspan="1">
         <textarea    placeholder="Escribe aqui" rows=12> </textarea>
       </mat-grid-tile>
-      <mat-grid-tile rowspan="2" colspan="3">
+      <mat-grid-tile rowspan="2" colspan="1">
         <button>Adjuntar imagen</button>
       </mat-grid-tile>
      
@@ -96,6 +100,42 @@
   
 
 </div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">
+      Email
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div>
+    <label for="tipoPostre">
+      Tipo de Postre
+    </label>
+    <input id="tipoPostre" type="text" formControlName="tipoPostre">
+  </div>
+  <div>
+    <label for="porciones">
+      Porciones
+    </label>
+    <input id="porciones" type="text" formControlName="porciones">
+  </div>
+  <div>
+    <label for="comentarios">
+      Comentarios
+    </label>
+    <input id="comentarios" type="text" formControlName="comentarios">
+  </div>
+  <div>
+    <label for="imagen">
+      Imagen de referencia
+    </label>
+    <input id="imagen" type="text" formControlName="imagen">
+  </div>
+
+  <button class="button" type="submit">Enviar</button>
+
+</form>
 
 <div>
   <mat-grid-list cols="4" rowHeight="100px">
