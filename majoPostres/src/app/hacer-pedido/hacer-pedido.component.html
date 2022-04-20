@@ -2,10 +2,7 @@
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
     <h3>Realiza tu pedido</h3>
-    
-
-    
-   
+  
     <mat-grid-list cols="6" rowHeight="100px" >
       <mat-grid-tile  colspan="1">
     
@@ -33,37 +30,21 @@
         Tipo de Postre
       </label>
       
-      <input  id="tipoPostre" type="text" formControlName="tipoPostre">
       </mat-grid-tile>
       <div  fxLayout="row" >
         <mat-grid-tile colspan="4" class="letraMasPeq">
-        
-          <div>
-            <label class="fondoDatos">
-              <input type="radio" >
-              Torta o Cupcakes
-            </label>
-          </div>
-          <div>
-            <label >
-              <input type="radio">
-              Galletas
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="radio">
-              Otro
-            </label>
-          </div>
-          <div>
+          <div class="fondoDatos" >
+            <input type="radio" value="torta" name="tipoPostre" formControlName="tipoPostre"  > Tortas o Cupcakes
+            <input type="radio" value="galleta" name="tipoPostre" formControlName="tipoPostre" > Galletas
+            <input type="radio" value="otro" name="tipoPostre"  formControlName="tipoPostre"  > Otro
+
             <select class="form-select" name="NAME" >
              
-             <option value="" disabled selected>Selecciona una opción</option>
-             <option value="1">Donas</option>
-             <option value="2">Pie</option>
-             <option value="3">Brownie</option>
-           </select>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Donas">Donas</option>
+              <option value="Pie">Pie</option>
+              <option value="Brownie">Brownie</option>
+            </select>
           </div>
    
         </mat-grid-tile>
