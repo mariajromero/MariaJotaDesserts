@@ -151,6 +151,17 @@ $star-command-blue: rgba(34, 116, 165, 1);
     text-align: center;
     border-radius: 12px;
 }
+.botonEnviar{
+    color:$prussian-blue;
+    background-color: $powder-blue;
+    font-size: 20px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 12px;
+}
 .linea{
     border-bottom: 3px solid $kobi; 
     margin-bottom:10px;
@@ -188,6 +199,7 @@ $star-command-blue: rgba(34, 116, 165, 1);
 .centrar{
     display: flex;
     justify-content: center;
+    vertical-align: middle
 }
 
 .fondoLabels{
