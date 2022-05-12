@@ -1,3 +1,20 @@
-<p>
-  ver mas works
-</p>
+<div 
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  
+
+  <div   fxLayout="row" fxLayoutAlign="space-evenly center" >
+    <div   *ngFor="let postre of postres" style="width: 300px; ">
+      <div class="centrar">
+        <img   class="imagenCatalogo"src={{postre.image}} alt={{postre.name}}>
+      </div>
+      
+      <h1 class="letraTit" > {{postre.name}} </h1>
+      <h3 class="letraDescrip">{{postre.description}}</h3>
+    </div>
+   
+    
+  </div>
+
+</div>

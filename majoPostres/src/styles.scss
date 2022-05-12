@@ -125,6 +125,22 @@ $star-command-blue: rgba(34, 116, 165, 1);
     
     position: relative;
 }
+.letraDescrip{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Barlow Condensed';
+    padding: 10px;
+    
+    position: relative;
+}
+.letraTit{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Barlow Condensed';
+    padding: 10px;
+    color:$medium-violet-red;
+    position: relative;
+}
 .botonPedido{
     color:$prussian-blue;
     background-color: $powder-blue;
@@ -163,7 +179,16 @@ $star-command-blue: rgba(34, 116, 165, 1);
     height: 400px;
     width: 400px;
 }
-
+.imagenCatalogo{
+   
+    margin-top:80px;
+    height: 250px;
+    width: 250px;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+}
 
 .fondoLabels{
     background-color: powderblue;
