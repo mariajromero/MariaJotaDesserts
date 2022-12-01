@@ -8,24 +8,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  implements OnInit{
-  public postres:Postre[];
-  constructor(private postreService: PostreService){}
-  ngOnInit()  {
-    this.getPostres();
-  }
+export class AppComponent {
+  
 
-  public getPostres():void{
-    this.postreService.getPostres().subscribe(
-      (response:Postre[])=>{
-        this.postres=response;
-      },
-      (error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-      
-    );
-  }
 
   title = 'majoPostres';
 }

@@ -21,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { VerMasComponent } from './ver-mas/ver-mas.component';
 import { HacerPedidoComponent } from './hacer-pedido/hacer-pedido.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
     HacerPedidoComponent
   ],
   imports: [
+    HttpClientModule,
     MatGridListModule,
     FormsModule,
     MatSelectModule,

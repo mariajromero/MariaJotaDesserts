@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Postre } from './postre';
+import { environment } from 'src/environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class PostreService {
-    private apiServerUrl = '';
+    private apiServerUrl = environment.apiBaseUrl;
     constructor(private http: HttpClient){}
     public getPostres(): Observable<Postre[]> {
         return this.http.get<Postre[]>(`${this.apiServerUrl}/postre/all`);

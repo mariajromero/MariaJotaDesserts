@@ -1,6 +1,6 @@
 export class Postre{
     name:string;
-    id:number;
+    id:String;
     image:string;
     category:string;
     description:string;
